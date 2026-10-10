@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeliztli | Cuidado Personal Natural y Responsable</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        botanical: {
+                            50: '#f4f7f4',
+                            100: '#e4ebe4',
+                            200: '#c9d8c8',
+                            300: '#a1bea0',
+                            400: '#759e74',
+                            500: '#548253',
+                            600: '#40683f',
+                            700: '#355334',
+                            800: '#2d432d',
+                            900: '#253826',
+                        },
+                        earth: {
+                            100: '#fdf8f5',
+                            200: '#f8ece5',
+                            500: '#d2a679',
+                            800: '#6b4c3a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+        }
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+        .tab-active {
+            border-bottom: 2px solid #548253;
+            color: #40683f;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="font-sans text-stone-800 bg-earth-100 antialiased selection:bg-botanical-300 selection:text-botanical-900">
+
+    <nav class="fixed w-full z-50 glass-effect border-b border-botanical-100 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <i class="fa-solid fa-leaf text-botanical-600 text-2xl"></i>
+                    <span class="font-serif text-2xl font-bold text-botanical-800 tracking-wide">Yeliztli</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#historia" class="text-stone-600 hover:text-botanical-600 transition-colors font-medium">Nuestra Historia</a>
+                    <a href="#impacto" class="text-stone-600 hover:text-botanical-600 transition-colors font-medium">Impacto (ODS)</a>
+                    <a href="#productos" class="text-stone-600 hover:text-botanical-600 transition-colors font-medium">Línea Botánica</a>
+                    <a href="#negocio" class="text-stone-600 hover:text-botanical-600 transition-colors font-medium">Plan de Negocios</a>
+                    <a href="#equipo" class="text-stone-600 hover:text-botanical-600 transition-colors font-medium">Equipo</a>
+                </div>
+                <div class="hidden md:flex">
+                    <button class="bg-botanical-600 hover:bg-botanical-700 text-white px-6 py-2 rounded-full transition-all shadow-md hover:shadow-lg font-medium">
+                        Comprar Ahora
+                    </button>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-stone-600 hover:text-botanical-600 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-lg">
+                <a href="#historia" class="block px-3 py-2 text-stone-600 hover:bg-botanical-50 hover:text-botanical-600 rounded-md">Nuestra Historia</a>
+                <a href="#impacto" class="block px-3 py-2 text-stone-600 hover:bg-botanical-50 hover:text-botanical-600 rounded-md">Impacto</a>
+                <a href="#productos" class="block px-3 py-2 text-stone-600 hover:bg-botanical-50 hover:text-botanical-600 rounded-md">Productos</a>
+                <a href="#negocio" class="block px-3 py-2 text-stone-600 hover:bg-botanical-50 hover:text-botanical-600 rounded-md">Negocio</a>
+                <a href="#equipo" class="block px-3 py-2 text-stone-600 hover:bg-botanical-50 hover:text-botanical-600 rounded-md">Equipo</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <!-- Decorative background elements -->
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-botanical-100 opacity-50 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-earth-200 opacity-50 blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="text-botanical-600 font-semibold tracking-wider uppercase text-sm mb-4 block">Naturaleza, Bienestar y Responsabilidad Social</span>
+                <h1 class="text-5xl md:text-6xl font-serif font-bold text-botanical-900 mb-6 leading-tight">
+                    Cuidar tu cuerpo es <br/> <span class="text-botanical-500 italic">cuidar tu entorno</span>
+                </h1>
+                <p class="text-lg text-stone-600 mb-10 leading-relaxed">
+                    Yeliztli ofrece productos de aseo personal 100% naturales y ecológicos. El 10% de tus compras apoya directamente a comunidades indígenas vulnerables en México.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#productos" class="bg-botanical-600 hover:bg-botanical-700 text-white px-8 py-3 rounded-full text-lg font-medium transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                        Descubre la Línea Botánica
+                    </a>
+                    <a href="#historia" class="bg-white hover:bg-stone-50 text-botanical-700 border border-botanical-200 px-8 py-3 rounded-full text-lg font-medium transition-all shadow-sm hover:shadow">
+                        Conoce nuestra historia
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="historia" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-sm text-botanical-600 font-bold tracking-widest uppercase mb-2">El Origen</h2>
+                    <h3 class="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-6">El problema que no podíamos ignorar</h3>
+                    
+                    <div class="space-y-6 text-stone-600 leading-relaxed">
+                        <p>
+                            La idea surgió al observar dos problemas que, aunque parecían separados, estaban profundamente relacionados:
+                        </p>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-red-50 p-3 rounded-lg text-red-500 mt-1">
+                                <i class="fa-solid fa-trash-can text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-800">Contaminación por residuos</h4>
+                                <p class="text-sm mt-1">El consumo cotidiano de productos comerciales genera una enorme cantidad de plásticos y químicos que permanecen cientos de años en el ecosistema.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-orange-50 p-3 rounded-lg text-orange-500 mt-1">
+                                <i class="fa-solid fa-users-slash text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-800">Vulnerabilidad de comunidades</h4>
+                                <p class="text-sm mt-1">Comunidades indígenas que conservan conocimientos ancestrales y una estrecha relación con la naturaleza continúan enfrentando severas dificultades económicas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl font-serif font-bold text-botanical-800 mt-10 mb-4">Nuestra Solución: Yeliztli</h3>
+                    <p class="text-stone-600 leading-relaxed mb-6">
+                        No somos solo jabones. Somos un cambio de paradigma. Creamos productos con ingredientes ecológicos y empaques biodegradables. Pero fuimos más allá: <strong>destinamos el 10% de nuestros ingresos</strong> a apoyar a estas comunidades, generando oportunidades que respetan su identidad.
+                    </p>
+                </div>
+                
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ingredientes naturales" class="rounded-2xl shadow-2xl z-10 relative">
+                    <div class="absolute -bottom-6 -left-6 bg-botanical-600 text-white p-8 rounded-2xl shadow-xl z-20 max-w-xs hidden md:block">
+                        <p class="font-serif text-xl italic mb-2">"La verdadera limpieza significa dejar un mundo más limpio y justo para quienes vienen después."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="impacto" class="py-20 bg-botanical-900 text-white relative overflow-hidden">
+        <!-- SVG Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <svg class="h-full w-full" xmlns="http://www.w3.org/2000/svg">
+                <defs><pattern id="leaves" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M50 0 C60 20, 80 40, 100 50 C80 60, 60 80, 50 100 C40 80, 20 60, 0 50 C20 40, 40 20, 50 0 Z" fill="currentColor"/></pattern></defs><rect x="0" y="0" width="100%" height="100%" fill="url(#leaves)"></rect>
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">Nuestro Compromiso Global</h2>
+                <p class="max-w-2xl mx-auto text-botanical-100 opacity-90">Nuestro modelo de negocio investigado se alinea directamente con los Objetivos de Desarrollo Sostenible (ODS) de la ONU.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- ODS 1 -->
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/20 transition-all">
+                    <div class="bg-red-600 text-white w-12 h-12 flex items-center justify-center rounded-lg mb-4 text-xl font-bold">1</div>
+                    <h3 class="text-xl font-bold mb-2">Fin de la Pobreza</h3>
+                    <p class="text-sm text-botanical-100">Donamos el 10% de nuestras ventas a comunidades indígenas, fomentando su independencia económica.</p>
+                </div>
+                <!-- ODS 8 -->
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/20 transition-all">
+                    <div class="bg-red-800 text-white w-12 h-12 flex items-center justify-center rounded-lg mb-4 text-xl font-bold">8</div>
+                    <h3 class="text-xl font-bold mb-2">Trabajo Decente</h3>
+                    <p class="text-sm text-botanical-100">Proveedores locales y alianzas con emprendedores garantizan un crecimiento económico inclusivo.</p>
+                </div>
+                <!-- ODS 12 -->
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/20 transition-all">
+                    <div class="bg-yellow-600 text-white w-12 h-12 flex items-center justify-center rounded-lg mb-4 text-xl font-bold">12</div>
+                    <h3 class="text-xl font-bold mb-2">Consumo Responsable</h3>
+                    <p class="text-sm text-botanical-100">Empaques en papel kraft biodegradable, cero plásticos y procesos responsables de manufactura.</p>
+                </div>
+                <!-- ODS 15 -->
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/20 transition-all">
+                    <div class="bg-green-500 text-white w-12 h-12 flex items-center justify-center rounded-lg mb-4 text-xl font-bold">15</div>
+                    <h3 class="text-xl font-bold mb-2">Vida de Ecosistemas</h3>
+                    <p class="text-sm text-botanical-100">Ingredientes 100% de origen vegetal (romero, caléndula, avena) sin químicos que dañen la tierra.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="productos" class="py-20 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-sm text-botanical-600 font-bold tracking-widest uppercase mb-2">Catálogo</h2>
+                <h3 class="text-3xl md:text-4xl font-serif font-bold text-stone-800">Línea Botánica</h3>
+                <p class="mt-4 text-stone-600 max-w-2xl mx-auto">Elaborados con bases vegetales, glicerina, aceites naturales y extractos puros. Presentación en empaque kraft minimalista y biodegradable.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <!-- Producto 1 -->
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all overflow-hidden product-card group border border-stone-100">
+                    <div class="h-64 overflow-hidden relative bg-botanical-50 flex justify-center items-center">
+                        <div class="absolute top-4 right-4 bg-botanical-600 text-white text-xs font-bold px-3 py-1 rounded-full z-10">Insignia</div>
+                        <!-- Placeholder visual styling instead of an image link for reliability -->
+                        <div class="w-32 h-24 bg-[#e6e2cd] rounded-md shadow-inner relative product-img transition-transform duration-500 border border-[#d4cfb8]">
+                            <div class="absolute inset-0 opacity-40 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')]"></div>
+                            <span class="absolute top-2 left-2 text-[8px] text-stone-600 opacity-50">Hojas de romero</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-stone-800 mb-1">Jabón de Romero</h4>
+                        <p class="text-sm text-botanical-600 mb-4">100g | Barra beige/verde olivo mate</p>
+                        <p class="text-sm text-stone-600 mb-6 line-clamp-2">Aporta limpieza profunda, aroma herbal y frescura. Ideal para iniciar el día con vitalidad.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold text-stone-800">$45 - $60 MXN</span>
+                            <button class="text-botanical-600 hover:text-botanical-800 bg-botanical-50 hover:bg-botanical-100 px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                                Añadir <i class="fa-solid fa-cart-plus ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all overflow-hidden product-card group border border-stone-100">
+                    <div class="h-64 overflow-hidden relative bg-orange-50 flex justify-center items-center">
+                        <div class="w-32 h-24 bg-[#fdf0d5] rounded-md shadow-inner relative product-img transition-transform duration-500 border border-[#f5e3ba]">
+                             <span class="absolute top-2 left-2 text-[8px] text-orange-600 opacity-50">Pétalos secos</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-stone-800 mb-1">Jabón de Caléndula</h4>
+                        <p class="text-sm text-orange-600 mb-4">100g | Barra amarillo crema</p>
+                        <p class="text-sm text-stone-600 mb-6 line-clamp-2">Enfoque cosmético tradicional para el cuidado de la piel delicada. Con pétalos naturales.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold text-stone-800">$45 - $60 MXN</span>
+                            <button class="text-botanical-600 hover:text-botanical-800 bg-botanical-50 hover:bg-botanical-100 px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                                Añadir <i class="fa-solid fa-cart-plus ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all overflow-hidden product-card group border border-stone-100">
+                    <div class="h-64 overflow-hidden relative bg-yellow-50 flex justify-center items-center">
+                        <div class="absolute top-4 right-4 bg-earth-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10">Familiar</div>
+                        <div class="w-32 h-24 bg-[#f5ebd6] rounded-md shadow-inner relative product-img transition-transform duration-500 border border-[#e8dac1]">
+                            <span class="absolute top-2 left-2 text-[8px] text-stone-600 opacity-50">Partículas de avena</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-stone-800 mb-1">Jabón de Avena y Miel</h4>
+                        <p class="text-sm text-earth-800 mb-4">100g | Barra crema gruesa</p>
+                        <p class="text-sm text-stone-600 mb-6 line-clamp-2">Nuestra opción más suave. Limpieza cremosa que deja una textura reconfortante en la piel.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold text-stone-800">$45 - $60 MXN</span>
+                            <button class="text-botanical-600 hover:text-botanical-800 bg-botanical-50 hover:bg-botanical-100 px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                                Añadir <i class="fa-solid fa-cart-plus ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all overflow-hidden product-card group border border-stone-100">
+                    <div class="h-64 overflow-hidden relative bg-stone-100 flex justify-center items-center">
+                        <div class="absolute top-4 right-4 bg-stone-800 text-white text-xs font-bold px-3 py-1 rounded-full z-10">Exfoliante</div>
+                        <div class="w-32 h-24 bg-[#6b4c3a] rounded-md shadow-inner relative product-img transition-transform duration-500 border border-[#4a3427]">
+                             <span class="absolute top-2 left-2 text-[8px] text-stone-300 opacity-60">Café fino</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-stone-800 mb-1">Jabón de Café</h4>
+                        <p class="text-sm text-stone-600 mb-4">100g | Barra café oscuro</p>
+                        <p class="text-sm text-stone-600 mb-6 line-clamp-2">Exfoliación física corporal con granos de café finos. Remueve impurezas suavemente.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold text-stone-800">$45 - $60 MXN</span>
+                            <button class="text-botanical-600 hover:text-botanical-800 bg-botanical-50 hover:bg-botanical-100 px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                                Añadir <i class="fa-solid fa-cart-plus ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Producto 5 -->
+                 <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all overflow-hidden product-card group border border-stone-100 lg:col-span-2 flex flex-col md:flex-row">
+                    <div class="md:w-1/3 h-64 md:h-auto overflow-hidden relative bg-emerald-50 flex justify-center items-center">
+                        <div class="w-16 h-40 bg-[#d8eedb] rounded-xl shadow-inner relative product-img transition-transform duration-500 border border-[#bce0c1] flex items-center justify-center">
+                             <div class="w-4 h-6 bg-white rounded-t-sm absolute -top-3 border border-gray-200"></div> <!-- Dispenser mock -->
+                             <span class="text-[8px] text-botanical-800 font-bold rotate-90">SHAMPOO</span>
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8 flex flex-col justify-center md:w-2/3">
+                        <h4 class="text-2xl font-bold text-stone-800 mb-2">Shampoo de Romero</h4>
+                        <p class="text-sm text-botanical-600 mb-4">250ml | Dispensador | Líquido viscoso verdoso</p>
+                        <p class="text-sm text-stone-600 mb-6">Limpieza purificante para el cabello y cuero cabelludo. Formulado con extracto de romero, vitamina E y glicerina para mantener una sensación fresca e hidratada sin químicos agresivos.</p>
+                        
+                        <div class="bg-stone-50 p-4 rounded-lg mb-6 text-xs text-stone-500 border border-stone-200">
+                            <strong>Rango de precios estimados:</strong> Mini (50g) $25-$30 | Estándar (100g) $45-$60 | Grande (150g) $65-$80 | Shampoo $80-$110. *Sujetos a análisis de costos (materia prima, envases, salarios) buscando un margen del 30% al 70%.
+                        </div>
+
+                        <div class="flex justify-between items-center mt-auto">
+                            <span class="text-xl font-bold text-stone-800">$80 - $110 MXN</span>
+                            <button class="text-white bg-botanical-600 hover:bg-botanical-700 px-6 py-3 rounded-lg text-sm font-semibold transition-colors shadow-md">
+                                Añadir al Carrito <i class="fa-solid fa-cart-plus ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="negocio" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-sm text-botanical-600 font-bold tracking-widest uppercase mb-2">Estrategia</h2>
+                <h3 class="text-3xl md:text-4xl font-serif font-bold text-stone-800">Modelo de Negocio a Profundidad</h3>
+                <p class="mt-4 text-stone-600 max-w-2xl mx-auto">Análisis estructurado basado en nuestro lienzo de negocio (Business Model Canvas) para asegurar viabilidad financiera y social.</p>
+            </div>
+
+            <!-- Custom Tab Interface for Business Canvas -->
+            <div class="bg-stone-50 rounded-2xl border border-stone-200 p-2 md:p-6 shadow-sm">
+                <!-- Tab Headers -->
+                <div class="flex flex-wrap border-b border-stone-200 mb-6 gap-2" id="canvas-tabs">
+                    <button class="px-4 py-2 font-medium text-sm rounded-t-lg tab-btn tab-active" data-target="propuesta">Propuesta & Clientes</button>
+                    <button class="px-4 py-2 font-medium text-sm rounded-t-lg tab-btn text-stone-500 hover:text-stone-800" data-target="operacion">Operación & Aliados</button>
+                    <button class="px-4 py-2 font-medium text-sm rounded-t-lg tab-btn text-stone-500 hover:text-stone-800" data-target="finanzas">Estructura Financiera</button>
+                </div>
+
+                <!-- Tab Contents -->
+                <div class="tab-content block" id="propuesta">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-100">
+                            <h4 class="text-lg font-bold text-botanical-800 flex items-center gap-2 mb-4">
+                                <i class="fa-solid fa-gem text-botanical-500"></i> Propuesta de Valor
+                            </h4>
+                            <ul class="space-y-3 text-sm text-stone-600">
+                                <li><i class="fa-solid fa-check text-botanical-400 mr-2"></i>Venta de productos de higiene personal para el cuidado de la piel.</li>
+                                <li><i class="fa-solid fa-check text-botanical-400 mr-2"></i><strong>Impacto Social:</strong> 10% destinado a comunidades indígenas.</li>
+                                <li><i class="fa-solid fa-check text-botanical-400 mr-2"></i>Compra rápida en línea y distribución directa.</li>
+                                <li><i class="fa-solid fa-check text-botanical-400 mr-2"></i>Diseños personalizados y en tendencia botánica.</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-100">
+                                <h4 class="text-lg font-bold text-botanical-800 flex items-center gap-2 mb-4">
+                                    <i class="fa-solid fa-users text-botanical-500"></i> Segmento y Relación
+                                </h4>
+                                <p class="text-sm text-stone-600 mb-2"><strong>Segmento:</strong> Personas de 15 a 50 años interesadas en el cuidado de su piel, su higiene y con consciencia ecológica.</p>
+                                <p class="text-sm text-stone-600"><strong>Relación:</strong> Precios accesibles, ofertas periódicas, atención personalizada al cliente e integración de sus propuestas.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-100">
+                                <h4 class="text-lg font-bold text-botanical-800 flex items-center gap-2 mb-4">
+                                    <i class="fa-solid fa-truck-fast text-botanical-500"></i> Canales
+                                </h4>
+                                <p class="text-sm text-stone-600"><strong>Principal:</strong> Redes sociales y Página Web (Ecommerce).</p>
+                                <p class="text-sm text-stone-600"><strong>Secundarios:</strong> Tiendas físicas, catálogos en línea y ventas directas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content hidden" id="operacion">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-100">
+                            <h4 class="text-lg font-bold text-botanical-800 flex items-center gap-2 mb-4">
+                                <i class="fa-solid fa-handshake text-botanical-500"></i> Socios Clave
+                            </h4>
+                            <ul class="space-y-3 text-sm text-stone-600 list-disc pl-5">
+                                <li>Socios inversionistas (Capital inicial).</li>
+                                <li>Compañía/Agencias de Marketing.</li>
+                                <li>Proveedores de materia prima (Buscando comercio justo).</li>
+                                <li>Distribuidores logísticos.</li>
+                                <li>Emprendedores para alianzas estratégicas.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-100">
+                            <h4 class="text-lg font-bold text-botanical-800 flex items-center gap-2 mb-4">
+                                <i class="fa-solid fa-gears text-botanical-500"></i> Actividades Clave
+                            </h4>
+                            <ul class="space-y-3 text-sm text-stone-600 list-disc pl-5">
+                                <li>Ventas de jabones y cuidado personal.</li>
+                                <li>Diseño de productos personalizados.</li>
+                                <li>Gestión de distribución por catálogo/redes.</li>
+                                <li>Ventas directas y demostraciones locales.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-100">
+                            <h4 class="text-lg font-bold text-botanical-800 flex items-center gap-2 mb-4">
+                                <i class="fa-solid fa-seedling text-botanical-500"></i> Recursos Clave
+                            </h4>
+                            <ul class="space-y-3 text-sm text-stone-600 list-disc pl-5">
+                                <li>Desarrollo y mantenimiento de página web.</li>
+                                <li>Campañas de publicidad digital.</li>
+                                <li>Actualización de catálogos por temporada.</li>
+                                <li>Adaptación del entorno a las tendencias.</li>
+                                <li>Atención dedicada en redes sociales.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content hidden" id="finanzas">
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-l-red-400">
+                            <h4 class="text-lg font-bold text-stone-800 flex items-center gap-2 mb-4">
+                                <i class="fa-solid fa-chart-pie text-red-400"></i> Estructura de Costos
+                            </h4>
+                            <p class="text-sm text-stone-600 mb-4">Se requiere detallar los costos asociados a la operación, incluyendo:</p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <strong class="text-xs uppercase text-stone-500">Costos Variables</strong>
+                                    <ul class="text-sm text-stone-600 mt-1 list-disc pl-4">
+                                        <li>Materia prima (bases, aceites)</li>
+                                        <li>Empaques kraft</li>
+                                        <li>Envíos y logística</li>
+                                        <li>Comisiones de pasarelas</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong class="text-xs uppercase text-stone-500">Costos Fijos</strong>
+                                    <ul class="text-sm text-stone-600 mt-1 list-disc pl-4">
+                                        <li>Desarrollo/Hosting Web</li>
+                                        <li>Salarios operativos</li>
+                                        <li>Publicidad (CAC)</li>
+                                        <li>Donativo 10% (Comunidades)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-l-green-400">
+                            <h4 class="text-lg font-bold text-stone-800 flex items-center gap-2 mb-4">
+                                <i class="fa-solid fa-money-bill-trend-up text-green-500"></i> Fuentes de Ingresos
+                            </h4>
+                            <p class="text-sm text-stone-600 mb-4">Generación de liquidez mediante un margen objetivo de rentabilidad del <strong>30% al 70%</strong>.</p>
+                            <ul class="space-y-3 text-sm text-stone-600">
+                                <li><i class="fa-solid fa-arrow-right text-green-400 mr-2"></i><strong>Venta en Línea:</strong> Principal fuente vía el e-commerce oficial y redes sociales.</li>
+                                <li><i class="fa-solid fa-arrow-right text-green-400 mr-2"></i><strong>Distribución Local:</strong> (Próximamente) Venta en local físico y stands.</li>
+                                <li><i class="fa-solid fa-arrow-right text-green-400 mr-2"></i><strong>Demostraciones:</strong> Eventos de degustación cosmética y venta directa post-demo.</li>
+                            </ul>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="equipo" class="py-20 bg-earth-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-sm text-botanical-600 font-bold tracking-widest uppercase mb-2">Fundadores</h2>
+                <h3 class="text-3xl md:text-4xl font-serif font-bold text-stone-800">El Equipo Yeliztli</h3>
+                <p class="mt-4 text-stone-600 max-w-2xl mx-auto">Unidos por la visión de un consumo responsable y la revalorización de nuestras raíces indígenas.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
+                
+                <!-- Néstor Luna (Base on image name) -->
+                <div class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-32 h-32 mx-auto bg-stone-200 rounded-full mb-6 overflow-hidden border-4 border-botanical-100 flex items-center justify-center">
+                        <i class="fa-solid fa-user text-4xl text-stone-400"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-stone-800">Néstor Luna</h4>
+                    <p class="text-botanical-600 text-sm font-semibold mb-3">Fundador & CEO</p>
+                    <p class="text-sm text-stone-600">Líder del proyecto y estratega de negocios. Autor del modelo fundacional para un modelo ecológicamente y socialmente rentable.</p>
+                </div>
+
+                <!-- Placeholder 2 -->
+                <div class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-32 h-32 mx-auto bg-stone-200 rounded-full mb-6 overflow-hidden border-4 border-botanical-100 flex items-center justify-center">
+                         <i class="fa-solid fa-flask text-3xl text-stone-400"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-stone-800">Director(a) de Producción</h4>
+                    <p class="text-botanical-600 text-sm font-semibold mb-3">Desarrollo Botánico</p>
+                    <p class="text-sm text-stone-600">Encargado/a de las formulaciones libres de químicos, asegurando la calidad de los jabones y shampoo con ingredientes 100% naturales.</p>
+                </div>
+
+                <!-- Placeholder 3 -->
+                <div class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-32 h-32 mx-auto bg-stone-200 rounded-full mb-6 overflow-hidden border-4 border-botanical-100 flex items-center justify-center">
+                         <i class="fa-solid fa-hand-holding-heart text-3xl text-stone-400"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-stone-800">Enlace Comunitario</h4>
+                    <p class="text-botanical-600 text-sm font-semibold mb-3">Impacto Social</p>
+                    <p class="text-sm text-stone-600">Responsable de asegurar que el 10% de los ingresos se canalice de forma transparente y efectiva a las comunidades indígenas.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-botanical-900 text-botanical-100 py-12 border-t border-botanical-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fa-solid fa-leaf text-botanical-400 text-2xl"></i>
+                        <span class="font-serif text-2xl font-bold text-white tracking-wide">Yeliztli</span>
+                    </div>
+                    <p class="text-sm text-botanical-200 max-w-sm mb-6">
+                        Empresa mexicana dedicada a la fabricación de productos de aseo personal con ingredientes naturales, buscando un mundo más limpio y justo.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-botanical-300 hover:text-white transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-botanical-300 hover:text-white transition-colors"><i class="fa-brands fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-botanical-300 hover:text-white transition-colors"><i class="fa-brands fa-tiktok text-xl"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Enlaces</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#historia" class="hover:text-white transition-colors">Historia</a></li>
+                        <li><a href="#productos" class="hover:text-white transition-colors">Catálogo</a></li>
+                        <li><a href="#negocio" class="hover:text-white transition-colors">Inversionistas</a></li>
+                        <li><a href="#impacto" class="hover:text-white transition-colors">ODS Impacto</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Contacto</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><i class="fa-solid fa-envelope mr-2 text-botanical-400"></i> hola@yeliztli.mx</li>
+                        <li><i class="fa-solid fa-phone mr-2 text-botanical-400"></i> +52 (55) 1234 5678</li>
+                        <li><i class="fa-solid fa-location-dot mr-2 text-botanical-400"></i> México</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-botanical-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
+                <p>&copy; 2024 Yeliztli. Todos los derechos reservados.</p>
+                <div class="space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">Aviso de Privacidad</a>
+                    <a href="#" class="hover:text-white">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        
+        // 1. Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-sm');
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+            } else {
+                nav.classList.remove('shadow-sm');
+                nav.style.background = 'rgba(255, 255, 255, 0.85)';
+            }
+        });
+
+        // 2. Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // 3. Close mobile menu on click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // 4. Tabs interaction for Business Plan
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active classes
+                tabBtns.forEach(b => {
+                    b.classList.remove('tab-active', 'text-botanical-800');
+                    b.classList.add('text-stone-500');
+                });
+                tabContents.forEach(c => {
+                    c.classList.remove('block');
+                    c.classList.add('hidden');
+                });
+
+                // Add active class to clicked
+                btn.classList.add('tab-active', 'text-botanical-800');
+                btn.classList.remove('text-stone-500');
+                
+                // Show target content
+                const targetId = btn.getAttribute('data-target');
+                document.getElementById(targetId).classList.remove('hidden');
+                document.getElementById(targetId).classList.add('block');
+            });
+        });
+    </script>
+</body>
+</html>
